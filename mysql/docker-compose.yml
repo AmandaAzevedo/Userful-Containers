@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  mysqlsrv:
+    image: mysql:8.0.21
+    container_name: mysql
+    environment:
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: "password"
+      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_DATABASE: "db"
+      MYSQL_ROOT_HOST: "%"
+    ports:
+      - "3306:3306"
+    volumes:
+      - /home/amanda/Documentos/Docker/Volumes/MySql:/var/lib/mysql
+    networks:
+      - mysql-compose-network
+
+networks: 
+  mysql-compose-network:
+    driver: bridge
