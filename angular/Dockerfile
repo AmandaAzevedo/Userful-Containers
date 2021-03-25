@@ -1,7 +1,7 @@
 # stage 1
 
 FROM node:14.15 AS app-project
-WORKDIR /myfastsurvey-front
+WORKDIR /app
 COPY . .
 RUN npm install && npm run build --prod
 
